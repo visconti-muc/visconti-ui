@@ -29,7 +29,9 @@ pipeline {
         stage('Code Analysis') {
             steps {
                 echo 'Analyzing Code...'
-                sh "echo ${scannerhome}"
+                withSonarQubeEnv('sonarqube') {
+                    sh """${scannerhome}/bin/sonar-runner"""
+                }
             }
         }
     }
