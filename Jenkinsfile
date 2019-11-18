@@ -30,7 +30,7 @@ pipeline {
             steps {
                 echo 'Analyzing Code...'
                 withSonarQubeEnv('sonarqube') {
-                    sh """${scannerhome}bin/sonar-scanner -D sonar.login=767958f27ecfb35d49ed8fc201ebf72f68"""
+                    sh """echo ${scannerhome}bin/sonar-scanner -D sonar.login=767958f27ecfb35d49ed8fc201ebf72f68"""
                 }
             }
         }
