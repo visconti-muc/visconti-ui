@@ -6,7 +6,6 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "test-headless": "ng test --watch=false --browsers=HeadlessChrome",
     "test-phantom": "ng test --watch=false --browsers=PhantomJS",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -46,7 +45,6 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "phantomjs-prebuilt": "^2.1.16",
     "protractor": "~5.4.0",
-    "puppeteer": "^2.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
