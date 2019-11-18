@@ -4,6 +4,7 @@ pipeline {
 
     environment {
         scannerhome = tool 'sonar-scanner';
+        SONAR_SCANNER_OPTS = "-Xmx2g";
     }
 
     agent {
@@ -29,7 +30,8 @@ pipeline {
             steps {
                 echo 'Analyzing Code...'
                 withSonarQubeEnv('sonarqube-server') {
-                    sh """${scannerhome}bin/sonar-scanner -D sonar.login=767958f27ecfb35d49ed8fc201ebf72f68"""
+                    sh "pwd"
+                    sh """${scannerhome}bin/sonar-scanner -Dproject.settings=sonar-project.properties"""
                 }
             }
         }
