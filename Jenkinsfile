@@ -2,6 +2,10 @@
 
 pipeline {
 
+    environment {
+        scannerhome = tool 'Sonar-Scanner';
+    }
+
     agent {
         docker {
             image 'node'
@@ -25,8 +29,7 @@ pipeline {
         stage('Code Analysis') {
             steps {
                 echo 'Analyzing Code...'
-                def scannerhome = tool 'Sonar-Scanner';
-                echo scannerhome;
+                sh "echo ${scannerhome}"
             }
         }
     }
