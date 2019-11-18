@@ -30,7 +30,7 @@ pipeline {
             steps {
                 echo 'Analyzing Code...'
                 withSonarQubeEnv('sonarqube') {
-                    sh """${scannerhome}bin/sonar-scanner"""
+                    sh """echo ${scannerhome}bin/sonar-scanner"""
                 }
             }
         }
