@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'npm run test-headless'
+                sh 'npm run test-phantom'
             }
         }
     }
