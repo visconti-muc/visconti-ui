@@ -22,5 +22,12 @@ pipeline {
                 sh 'npm run test-phantom'
             }
         }
+        stage('Code Analysis') {
+            steps {
+                echo 'Analyzing Code...'
+                def scannerhome = tool 'Sonar-Scanner';
+                echo scannerhome;
+            }
+        }
     }
 }
