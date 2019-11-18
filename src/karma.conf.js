@@ -27,7 +27,9 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome', 'PhantomJS'],
-    singleRun: false,
+    browserNoActivityTimeout: 100000,
+    browserDisconnectTolerance: 2,
+    singleRun: true,
     restartOnFileChange: true
   });
 };
