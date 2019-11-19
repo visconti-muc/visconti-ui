@@ -31,7 +31,7 @@ pipeline {
                 echo 'Analyzing Code...'
                 withSonarQubeEnv('sonarqube-server') {
                     sh "pwd"
-                    sh """${scannerhome}bin/sonar-scanner -Dproject.settings=sonar-project.properties"""
+                    sh """${scannerhome}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"""
                 }
             }
         }
