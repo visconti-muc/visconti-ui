@@ -7,13 +7,6 @@ pipeline {
         SONAR_SCANNER_OPTS = "-Xmx2g";
     }
 
-    agent {
-        docker {
-            image 'node'
-            args '-u root'
-        }
-    }
-
     stages {
         stage('Build') {
             steps {
