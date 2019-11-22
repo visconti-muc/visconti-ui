@@ -6,6 +6,9 @@ pipeline {
         scannerhome = tool 'sonar-scanner';
         SONAR_SCANNER_OPTS = "-Xmx2g";
     }
+  
+    agent any
+
 
     stages {
         stage('Build') {
