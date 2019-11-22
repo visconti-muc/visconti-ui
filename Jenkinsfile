@@ -7,7 +7,9 @@ pipeline {
         SONAR_SCANNER_OPTS = "-Xmx2g";
     }
   
-    agent any
+    agent {
+        label 'master'
+    }
 
 
     stages {
