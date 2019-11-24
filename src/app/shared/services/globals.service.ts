@@ -6,12 +6,12 @@ import { Injectable } from '@angular/core';
 export class GlobalsService {
 
     /* ---------------------------------------------- Global variables ---------------------------------------------- */
-    supportedLanguages = ['de', 'en', 'fr', 'it'];
+    readonly supportedLanguages = ['de', 'en', 'fr', 'it'];
 
     constructor() {}
 
     /* ------------------------------------------ Global Anonymous functions ---------------------------------------- */
-    distinct = (value: any, index: number, self: any[]) => {
+    distinct = <T>(value: T, index: number, self: T[]) => {
         return self.indexOf(value) === index;
     };
 }

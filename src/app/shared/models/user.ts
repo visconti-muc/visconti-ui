@@ -4,7 +4,7 @@ export class UserModel {
     private PreferredLanguage: string;
 
     constructor(userResponse: any) {
-        this.OtherLanguages = userResponse.otherLanguages || '';
+        this.OtherLanguages = userResponse.otherLanguages || [];
         this.PreferredLanguage = userResponse.preferredLanguage || '';
     }
 
