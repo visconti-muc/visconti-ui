@@ -2,8 +2,7 @@
 pipeline {
 
     environment {
-        scannerhome = tool 'sonar-scanner';
-        SONAR_SCANNER_OPTS = "-Xmx2g";
+        scanner_home = tool 'sonar-scanner';
     }
 
     agent {
@@ -13,24 +12,24 @@ pipeline {
 
     stages {
 
-        stage('NPM dependency Installation') {
+        stage('Project Dependency Installation') {
             steps {
-                echo 'Building...'
+                echo 'Installing dependencies with npm...'
                 sh 'npm install'
             }
         }
 
-        stage('Test') {
+        stage('Unit Testing Project') {
             steps {
-                echo 'Testing...'
+                echo 'Unit testing project via Jasmine & Karma...'
             }
         }
 
-        stage('SonarQube Code Analysis') {
+        stage('SonarQube Project Code Analysis') {
             steps {
                 echo 'SonarQube is analyzing code...'
                 withSonarQubeEnv('sonarqube-server') {
-                    sh """${scannerhome}/bin/sonar-scanner"""
+                    sh """${scanner_home}/bin/sonar-scanner"""
                 }
             }
         }
