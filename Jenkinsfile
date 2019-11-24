@@ -12,25 +12,40 @@ pipeline {
 
 
     stages {
-        stage('Build') {
+
+        stage('NPM dependency Installation') {
             steps {
                 echo 'Building...'
                 sh 'npm install'
             }
         }
+
         stage('Test') {
             steps {
                 echo 'Testing...'
             }
         }
-        stage('Code Analysis') {
+
+        stage('SonarQube Code Analysis') {
             steps {
-                echo 'Analyzing Code...'
+                echo 'SonarQube is analyzing code...'
                 withSonarQubeEnv('sonarqube-server') {
-                    sh "pwd"
                     sh """${scannerhome}/bin/sonar-scanner"""
                 }
             }
         }
+
+        stage('Quality Gate') {
+            steps {
+                echo 'Failing pipeline if coverage not met...'
+                timeout(time: 1, unit: 'HOURS') {
+                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
+                    // true = set pipeline to UNSTABLE, false = don't
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+
+
     }
 }
