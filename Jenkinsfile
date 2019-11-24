@@ -35,21 +35,5 @@ pipeline {
             }
         }
 
-        stage('Quality Gate') {
-            steps {
-                echo 'Failing pipeline if coverage not met...'
-                timeout(time: 2, unit: 'MINUTES') {
-                    // def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
-                    // if (qg.status != 'OK') {
-                      // error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                    // }
-                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
-                    // true = set pipeline to UNSTABLE, false = don't
-                    waitForQualityGate abortPipeline: true
-                }
-            }
-        }
-
-
     }
 }
