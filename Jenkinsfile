@@ -1,12 +1,11 @@
 #!/usr/bin/env groovy
-
 pipeline {
 
     environment {
         scannerhome = tool 'sonar-scanner';
         SONAR_SCANNER_OPTS = "-Xmx2g";
     }
-  
+
     agent {
         label 'master'
     }
