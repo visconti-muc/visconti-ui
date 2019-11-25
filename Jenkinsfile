@@ -22,7 +22,7 @@ pipeline {
         stage('Unit Testing Project') {
             steps {
                 echo 'Unit testing project via Jasmine & Karma...'
-                sh 'ng test --code-coverage --watch=false --browsers=PhantomJS'
+                sh 'npm test-coverage'
             }
         }
 
