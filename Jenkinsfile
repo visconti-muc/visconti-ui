@@ -22,7 +22,7 @@ pipeline {
         stage('Unit Testing Project') {
             steps {
                 echo 'Unit testing project via Jasmine & Karma...'
-                sh 'npm test-coverage'
+                sh 'npm test'
             }
         }
 
