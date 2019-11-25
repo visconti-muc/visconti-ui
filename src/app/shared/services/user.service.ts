@@ -42,7 +42,8 @@ export class UserService {
     }
 
     public getNavigatorLanguage(): string {
-        return navigator.language.split('-')[0];
+        const locale = navigator.language; // || window.navigator.userLanguage;
+        return locale.split('-')[0];
     }
 
 }

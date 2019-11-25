@@ -34,5 +34,14 @@ pipeline {
             }
         }
 
+        stage('test') {
+            steps {
+                echo 'SonarQube is analyzing code...'
+                withSonarQubeEnv('sonarqube-server') {
+                    sh """npm run sonar"""
+                }
+            }
+        }
+
     }
 }
