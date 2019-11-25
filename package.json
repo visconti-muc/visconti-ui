@@ -13,9 +13,9 @@
         "lint": "ng lint",
         "ng": "ng",
         "start": "ng serve",
-        "test": "ng test --watch=false --browsers=Chrome",
-        "test-phantom": "ng test --watch=false --browsers=PhantomJS",
-        "test-coverage": "ng test --code-coverage --watch=false --browsers=PhantomJS",
+        "testChrome": "ng test --watch=false --browsers=Chrome",
+        "testPhantomJS": "ng test --watch=false --browsers=PhantomJS",
+        "test": "ng test --code-coverage --watch=false --browsers=PhantomJS",
         "sonar": "sonar-scanner"
     },
     "private": true,

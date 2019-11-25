@@ -166,3 +166,4 @@ typings/
 
 # dotenv environment variables file
 .env
+src/app/shared/components/

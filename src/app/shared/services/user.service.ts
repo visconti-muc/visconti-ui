@@ -34,15 +34,16 @@ export class UserService {
 
     /* ------------------------------------------- service related methods ------------------------------------------ */
     public getAllNavigatorLanguages(usersNavigatorLanguage: string): string [] {
-        return navigator.languages
+        return [];
+        /*navigator.languages
             .map((data) => data.split('-')[0])
             .map((language) => this.globalsService.supportedLanguages.indexOf(language) > -1 ? language : 'en')
             .filter(this.globalsService.distinct)
-            .filter((language) => language !== usersNavigatorLanguage);
+            .filter((language) => language !== usersNavigatorLanguage);*/
     }
 
     public getNavigatorLanguage(): string {
-        const locale = navigator.language; // || window.navigator.userLanguage;
+        const locale = 'de';  // navigator.language; // || window.navigator.userLanguage;
         return locale.split('-')[0];
     }
 
