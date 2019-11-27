@@ -1,9 +1,14 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+/**
+ * A variable defining the non-production build environment.
+ */
 export const environment = {
-  production: false
+    /**
+     * A boolean variable indicating if environment project is built for is production (true) or not (false).
+     */
+    production: false
 };
 
 /*
