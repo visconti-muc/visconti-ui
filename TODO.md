@@ -1,3 +1,3 @@
-Document and test globals.service.ts
+Document globals.service.ts
 
 Rework UserService

@@ -8,7 +8,7 @@ export class GlobalsService {
     /* ---------------------------------------------- Global variables ---------------------------------------------- */
     // readonly supportedLanguages = ['de', 'en', 'fr', 'it'];
 
-    constructor() {}
+    // constructor() {}
 
     /* ------------------------------------------ Global Anonymous functions ---------------------------------------- */
     distinct = <T>(value: T, index: number, self: T[]) => {
@@ -19,6 +19,5 @@ export class GlobalsService {
 
 /* ----------------------------------------------- Global enumerations ---------------------------------------------- */
 export enum supportedLanguages {
-
     'de', 'en', 'fr', 'it'
 }
