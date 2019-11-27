@@ -14,9 +14,11 @@ export class GlobalsService {
     distinct = <T>(value: T, index: number, self: T[]) => {
         return self.indexOf(value) === index;
     }
+
 }
 
 /* ----------------------------------------------- Global enumerations ---------------------------------------------- */
 export enum supportedLanguages {
+
     'de', 'en', 'fr', 'it'
 }
