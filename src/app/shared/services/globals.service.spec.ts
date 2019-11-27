@@ -15,10 +15,17 @@ describe('Testing service GlobalsService.', () => {
     });
 
     /* Testing the anonymous bound method distinct */
-    it('This test should create an instance of GlobalsService.', () => {
+    it('This test should filter out all repeated values out returning distinct values.', () => {
         const service: GlobalsService = TestBed.get(GlobalsService);
         const repeated = [0, 1, 2, 3, 3, 4, 4, 4, 2, 5, 6];
         expect(repeated.filter(service.distinct)).toEqual([0, 1, 2, 3, 4, 5, 6]);
+    });
+
+    /* Testing the anonymous bound method empty */
+    it('This test should filter out all empty values out returning non-empty values.', () => {
+        const service: GlobalsService = TestBed.get(GlobalsService);
+        const repeated = ['0', '', '2', '3', '4', '5', '6'];
+        expect(repeated.filter(service.empty)).toEqual(['0', '2', '3', '4', '5', '6']);
     });
 
 });

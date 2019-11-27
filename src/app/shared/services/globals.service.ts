@@ -28,6 +28,18 @@ export class GlobalsService {
         return self.indexOf(value) === index;
     }
 
+    /**
+     * Anonymous function filtering out empty string values from arrays and returning an array without empty strings.
+     * @example
+     * Usage:
+     * ['0', '', '2', '3', '4', '5', '6'].filter(distinct)
+     *
+     * @param value Value of element of the array being filtered.
+     */
+    empty = (value: string) => {
+        return value !== '';
+    }
+
 }
 
 /* ----------------------------------------------- Global enumerations ---------------------------------------------- */
