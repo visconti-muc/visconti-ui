@@ -12,7 +12,8 @@ import { UserModel } from '../models/user';
 import { GlobalsService, supportedLanguages } from './globals.service';
 
 /**
- * This service handles variables and methods defined once for here to be used throughout the application without change
+ * This service handles exchange of information of user logged to visconti UI application between different modules
+ * within said application.
  */
 @Injectable({
     providedIn: 'root'
@@ -36,14 +37,16 @@ export class UserService {
     public currentUser = this.userSource.asObservable();
 
     /**
-     * Constructor for UserService
-     * @param globalsService .
+     * Constructor for UserService that calls itself GlobalsService to get to methods defined into GlobalsService.
+     *
+     * @param globalsService an instance of the GlobalsService.
      */
     constructor(
         private globalsService: GlobalsService,
     ) {
     }
 
+    /* ------------------------------------------- angular service methods ------------------------------------------ */
     /**
      * This method calls next on the behavior subject variable to change value of user to newUser.
      *
