@@ -79,20 +79,6 @@ export class UserService {
     }
 
     /**
-     * This method gets a language as input parameter and matches it to the supported languages for this application.
-     * If the language of browser is matched to supported languages, then that language is returned, else English is
-     * returned by default.
-     *
-     * @param mainNavigatorLanguage A string (two letters long language short code) that is representing a language.
-     * @returns A string (two letters long language short code) that is the language passed as parameter (if said
-     * language is in supportedLanguages enum) else supportedLanguages.en.
-     */
-    public getApplicationLanguage(mainNavigatorLanguage: any): supportedLanguages {
-        const index = Object.keys(supportedLanguages).indexOf(mainNavigatorLanguage);
-        return index > -1 ? mainNavigatorLanguage as supportedLanguages : supportedLanguages.en;
-    }
-
-    /**
      * This method extracts all languages of the user's browser and returns them as strings in an Array.
      *
      * @returns A list of string (two letters long language short codes) describing languages installed in the user's
@@ -107,6 +93,20 @@ export class UserService {
     }
 
     /**
+     * This method gets a language as input parameter and matches it to the supported languages for this application.
+     * If the language of browser is matched to supported languages, then that language is returned, else English is
+     * returned by default.
+     *
+     * @param mainNavigatorLanguage A string (two letters long language short code) that is representing a language.
+     * @returns A string (two letters long language short code) that is the language passed as parameter (if said
+     * language is in supportedLanguages enum) else supportedLanguages.en.
+     */
+    public getApplicationLanguage(mainNavigatorLanguage: any): supportedLanguages {
+        const index = Object.keys(supportedLanguages).indexOf(mainNavigatorLanguage);
+        return index > -1 ? mainNavigatorLanguage as supportedLanguages : supportedLanguages.en;
+    }
+
+    /**
      * This method extracts the user's browser main language.
      *
      * @returns A string (two letters long language short code) that is the default language of the browser of the user.
@@ -115,11 +115,7 @@ export class UserService {
         let locale;
         let navigator: any;
         navigator = window.navigator;
-        try {
-            locale = navigator.language;
-        } catch (e) {
-            locale = navigator.userLanguage;
-        }
+        locale = navigator.language;
         return locale.split('-')[0].toString().toLowerCase();
     }
 
