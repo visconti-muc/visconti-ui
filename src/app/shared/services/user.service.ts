@@ -115,7 +115,11 @@ export class UserService {
         let locale;
         let navigator: any;
         navigator = window.navigator;
-        locale = navigator.language;
+        try {
+            locale = navigator.language;
+        } catch (e) {
+            locale = navigator.userLanguage;
+        }
         return locale.split('-')[0].toString().toLowerCase();
     }
 

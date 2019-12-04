@@ -23,4 +23,22 @@ describe('UserService', () => {
         const service: UserService = TestBed.get(UserService);
         expect(service.getApplicationLanguage('gr')).toEqual(supportedLanguages.en);
     });
+
+    it('This test runs getApplicationLanguage on not supported language greek', () => {
+        const service: UserService = TestBed.get(UserService);
+        Object.defineProperty(navigator, 'language', {
+            get: () => undefined,
+        });
+        expect(service.getMainNavigatorLanguage()).toEqual('en');
+    });
+
+    /*
+    Object.defineProperty(navigator, 'language', {
+        get: () => undefined,
+    });
+    Object.defineProperty(navigator, 'userLanguage', {
+        get: () => 'en-XX',
+    });
+     */
+
 });
