@@ -1,3 +1,8 @@
+1. create login page
+2. document login page
+3. test login page
+4. look at the other website to see how they deal with homepage
+5. look at how to handle languages
 
 Document:
 
