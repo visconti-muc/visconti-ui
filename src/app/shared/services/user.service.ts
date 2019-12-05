@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 
 /* --------------------------------------- imported libraries related imports --------------------------------------- */
-import { BehaviorSubject } from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 /* -------------------------------------------- project related imports --------------------------------------------- */
 /* Models */
@@ -30,11 +30,11 @@ export class UserService {
     /**
      * Behavior variable that holds the current value of user an instance of class UserModel.
      */
-    private userSource = new BehaviorSubject(new UserModel(this.defaultUserResponse));
+    private userSource: BehaviorSubject<UserModel> = new BehaviorSubject(new UserModel(this.defaultUserResponse));
     /**
      * The current value of user an instance of class UserModel as an observable.
      */
-    public currentUser = this.userSource.asObservable();
+    public currentUser: Observable<UserModel> = this.userSource.asObservable();
 
     /**
      * Constructor for UserService that calls itself GlobalsService to get to methods defined into GlobalsService.

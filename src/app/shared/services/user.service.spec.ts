@@ -2,14 +2,37 @@ import { TestBed } from '@angular/core/testing';
 
 import { UserService } from './user.service';
 
-import { GlobalsService, supportedLanguages } from './globals.service';
+import { supportedLanguages } from './globals.service';
+
+import { UserModel } from '../models/user';
 
 describe('UserService', () => {
     beforeEach(() => TestBed.configureTestingModule({}));
 
+    /* The next test checks if UserService instance is created */
     it('should be created', () => {
         const service: UserService = TestBed.get(UserService);
         expect(service).toBeTruthy();
+    });
+
+    /* The next test checks if changeUser behaves as expected */
+    it('This test run changeUser that triggers next on Behavior subject with a new UserModel then subscribes ' +
+        'to the BS to macth value and test instance of returned value', () => {
+        const service: UserService = TestBed.get(UserService);
+        service.changeUser(
+            new UserModel(
+                {
+                    preferredLanguage: 'en' as undefined as supportedLanguages,
+                    otherLanguages: [ 'de', 'fr' ]
+                }
+            )
+        );
+        service.currentUser.subscribe(data => {
+            const keys = Object.entries(supportedLanguages).filter(entry => entry[1] === 'en')[0][1] as unknown as supportedLanguages;
+            expect(data.usersLanguage).toEqual(keys);
+            expect(data.usersOtherLanguages).toEqual([ 'de', 'fr' ]);
+            expect(data).toEqual(jasmine.any(UserModel));
+        });
     });
 
 /* ------------------------------------------- Testing supporting methods ------------------------------------------- */
