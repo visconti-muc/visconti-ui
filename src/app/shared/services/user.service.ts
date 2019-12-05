@@ -25,7 +25,7 @@ export class UserService {
      */
     readonly defaultUserResponse = {
         preferredLanguage: this.getApplicationLanguage(this.getMainNavigatorLanguage()),
-        otherLanguages: this.filterForOtherLanguages()
+        otherLanguages: this.getNavigatorOtherLanguages()
     };
     /**
      * Behavior variable that holds the current value of user an instance of class UserModel.
@@ -66,7 +66,7 @@ export class UserService {
      * @returns A string (two letters long language short code) that are all the language of the browser of the user that
      * is separate of the application's default language for the current user.
      */
-    public filterForOtherLanguages(): string [] {
+    public getNavigatorOtherLanguages(): string [] {
         const allNavigatorLanguages = this.getAllNavigatorLanguages();
         const navigatorLanguage = this.getMainNavigatorLanguage();
         const applicationLanguage = this.getApplicationLanguage(navigatorLanguage);
@@ -75,7 +75,7 @@ export class UserService {
         }
         return allNavigatorLanguages.filter(( lang ) => {
             return applicationLanguage.toString().toLowerCase() !== lang;
-        });
+        }).filter(this.globalsService.distinct).sort();
     }
 
     /**
@@ -89,7 +89,7 @@ export class UserService {
         languages = window.navigator.languages || [];
         return languages.map((data) => data.split('-')[0].toString().toLowerCase())
             .filter(this.globalsService.distinct)
-            .filter(this.globalsService.empty);
+            .filter(this.globalsService.empty).sort();
     }
 
     /**
@@ -112,14 +112,9 @@ export class UserService {
      * @returns A string (two letters long language short code) that is the default language of the browser of the user.
      */
     public getMainNavigatorLanguage(): string {
-        let locale;
         let navigator: any;
         navigator = window.navigator;
-        try {
-            locale = navigator.language;
-        } catch (e) {
-            locale = navigator.userLanguage;
-        }
+        const locale = navigator.language || navigator.userLanguage;
         return locale.split('-')[0].toString().toLowerCase();
     }
 
