@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Hind|Roboto:300&display=swap');
+
+html, body {
+    height: 100%;
+}
+body {
+    /*
+    background-image: url(./assets/images/background.png);
+    background-size: cover;
+     */
+    background-color: rgba(0, 0, 255, 1);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    resize: both;
+}
+
+.title {
+    font-family: Hind, "Helvetica Neue", sans-serif;
+}
