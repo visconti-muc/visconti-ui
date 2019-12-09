@@ -20,3 +20,12 @@ body {
 .title {
     font-family: Hind, "Helvetica Neue", sans-serif;
 }
+.nav-l {
+    font-weight: bold;
+    text-decoration: none;
+
+}
+a.nav-l:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+}

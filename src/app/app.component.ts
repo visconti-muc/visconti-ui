@@ -33,7 +33,7 @@ export class AppComponent {
 
     public loginButtonHandler(event: Event): void {
         event.stopPropagation();
-        this.router.navigate(['/account']).then(); // TODO: Logged page navigate out
+        this.router.navigate(['/account/login']).then(); // TODO: Logged page navigate out
     }
 
     public openAccountDialog(marginUp, marginRight): void {

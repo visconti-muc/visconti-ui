@@ -1,1 +1,22 @@
-<p>account-modal works!</p>
+<table *ngFor="let table of tables; let index = index">
+        <tr>
+            <th>
+                <mat-icon class="material-icons-outlined" aria-hidden="false" aria-label="Identity permission" > {{ table.icon }} </mat-icon>
+            </th>
+            <th class="align-left">
+                {{ table.title }}
+            </th>
+        </tr>
+        <tr>
+            <td></td>
+            <td> {{ table.description }} </td>
+        </tr>
+        <tr style="padding-bottom: 20px">
+            <td></td>
+            <td>
+                <div mat-dialog-actions>
+                    <a class="nav-l" [mat-dialog-close]="" (click)="navigationLinkHandler($event, index)"> {{ table.linkText }} &#8594; </a>
+                </div>
+            </td>
+        </tr>
+</table>

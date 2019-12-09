@@ -10,6 +10,112 @@ import { Injectable } from '@angular/core';
 export class GlobalsService {
 
     /* ---------------------------------------------- Global variables ---------------------------------------------- */
+    accountModalTables = {
+        de: [
+            {
+                icon: 'perm_identity',
+                title: 'Visconti-Konto anmelden',
+                description: 'Logge dich ein und erhalte einen Überblick über deine Einkäufe, offenen Zahlungen und schließe' +
+                    'sie per 1-Klick ab!',
+                linkText: 'Zur Anmeldung',
+                linkRoute: '/account/login'
+            },
+            {
+                icon: 'create',
+                title: 'Visconti-Konto erstellen',
+                description: 'Logge dich ein und erhalte einen Überblick über deine Einkäufe, offenen Zahlungen und schließe' +
+                    'sie per 1-Klick ab!',
+                linkText: 'Zur Erstellung',
+                linkRoute: '/account/create'
+            },
+            {
+                icon: 'perm_identity',
+                title: 'Passwort wiederherstellen',
+                description: 'Logge dich ein und erhalte einen Überblick über deine Einkäufe, offenen Zahlungen und schließe' +
+                    'sie per 1-Klick ab!',
+                linkText: 'Zur Wiederherstellung',
+                linkRoute: '/account/recover'
+            }
+        ],
+        en: [
+            {
+                icon: 'perm_identity',
+                title: 'Visconti-Konto anmelden',
+                description: 'Logge dich ein und erhalte einen Überblick über deine Einkäufe, offenen Zahlungen und schließe' +
+                    'sie per 1-Klick ab!',
+                linkText: 'Zur Anmeldung',
+                linkRoute: '/account/login'
+            },
+            {
+                icon: 'create',
+                title: 'Visconti-Konto erstellen',
+                description: 'Logge dich ein und erhalte einen Überblick über deine Einkäufe, offenen Zahlungen und schließe' +
+                    'sie per 1-Klick ab!',
+                linkText: 'Zur Erstellung',
+                linkRoute: '/account/create'
+            },
+            {
+                icon: 'perm_identity',
+                title: 'Passwort wiederherstellen',
+                description: 'Logge dich ein und erhalte einen Überblick über deine Einkäufe, offenen Zahlungen und schließe' +
+                    'sie per 1-Klick ab!',
+                linkText: 'Zur Wiederherstellung',
+                linkRoute: '/account/recover'
+            }
+        ],
+        fr: [
+            {
+                icon: 'perm_identity',
+                title: 'Visconti-Konto anmelden',
+                description: 'Logge dich ein und erhalte einen Überblick über deine Einkäufe, offenen Zahlungen und schließe' +
+                    'sie per 1-Klick ab!',
+                linkText: 'Zur Anmeldung',
+                linkRoute: '/account/login'
+            },
+            {
+                icon: 'create',
+                title: 'Visconti-Konto erstellen',
+                description: 'Logge dich ein und erhalte einen Überblick über deine Einkäufe, offenen Zahlungen und schließe' +
+                    'sie per 1-Klick ab!',
+                linkText: 'Zur Erstellung',
+                linkRoute: '/account/create'
+            },
+            {
+                icon: 'perm_identity',
+                title: 'Passwort wiederherstellen',
+                description: 'Logge dich ein und erhalte einen Überblick über deine Einkäufe, offenen Zahlungen und schließe' +
+                    'sie per 1-Klick ab!',
+                linkText: 'Zur Wiederherstellung',
+                linkRoute: '/account/recover'
+            }
+        ],
+        it: [
+            {
+                icon: 'perm_identity',
+                title: 'Visconti-Konto anmelden',
+                description: 'Logge dich ein und erhalte einen Überblick über deine Einkäufe, offenen Zahlungen und schließe' +
+                    'sie per 1-Klick ab!',
+                linkText: 'Zur Anmeldung',
+                linkRoute: '/account/login'
+            },
+            {
+                icon: 'create',
+                title: 'Visconti-Konto erstellen',
+                description: 'Logge dich ein und erhalte einen Überblick über deine Einkäufe, offenen Zahlungen und schließe' +
+                    'sie per 1-Klick ab!',
+                linkText: 'Zur Erstellung',
+                linkRoute: '/account/create'
+            },
+            {
+                icon: 'perm_identity',
+                title: 'Passwort wiederherstellen',
+                description: 'Logge dich ein und erhalte einen Überblick über deine Einkäufe, offenen Zahlungen und schließe' +
+                    'sie per 1-Klick ab!',
+                linkText: 'Zur Wiederherstellung',
+                linkRoute: '/account/recover'
+            }
+        ]
+    };
 
     /* ------------------------------------------ Global Anonymous functions ---------------------------------------- */
 
@@ -26,7 +132,7 @@ export class GlobalsService {
      */
     distinct = <T>(value: T, index: number, self: T[]) => {
         return self.indexOf(value) === index;
-    }
+    };
 
     /**
      * Anonymous function filtering out empty string values from arrays and returning an array without empty strings.
@@ -38,7 +144,7 @@ export class GlobalsService {
      */
     empty = (value: string) => {
         return value !== '';
-    }
+    };
 
 }
 

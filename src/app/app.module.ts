@@ -11,6 +11,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found-component/page-not-found.component';
+import { AccountCreationComponent } from './account/account-creation/account-creation.component';
+import { AccountRecoveryComponent } from './account/account-recovery/account-recovery.component';
+import { AccountLoginComponent } from './account/account-login/account-login.component';
 
 
 @NgModule({
@@ -21,6 +24,9 @@ import { PageNotFoundComponent } from './page-not-found-component/page-not-found
         AppComponent,
         HomeComponent,
         PageNotFoundComponent,
+        AccountCreationComponent,
+        AccountRecoveryComponent,
+        AccountLoginComponent,
     ],
     imports: [
         AppRoutingModule,

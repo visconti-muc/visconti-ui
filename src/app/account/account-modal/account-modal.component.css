@@ -1,0 +1,10 @@
+/* By Tag */
+table {
+    padding-bottom: 5%;
+    margin: 10px 0;
+}
+/* By class */
+.align-left {
+    text-align: left !important;
+}
+
